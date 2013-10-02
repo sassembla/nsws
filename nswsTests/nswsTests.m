@@ -7,8 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AppDelegate.h"
 
-@interface nswsTests : XCTestCase
+#define TEST_TAREGET    (@"ws://127.0.0.1:8823")
+
+@interface nswsTests : XCTestCase {
+    AppDelegate * del;
+}
 
 @end
 
@@ -22,13 +27,21 @@
 
 - (void)tearDown
 {
+    [del close];
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+
+- (void) testIgniteThenConnectManually {
+    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET};
+    del = [[AppDelegate alloc]initAppDelegateWithParam:params];
+    
+    while ([del isConnecting]) {
+        [[NSRunLoop mainRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    }
+    
 }
+
 
 @end

@@ -7,9 +7,25 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SRWebSocket.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+#define KEY_TARGET  (@"-t")
+
+enum STATE {
+    STATE_NONE,
+    STATE_CONNECTING,
+    STATE_CONNECTED,
+    STATE_CLOSED,
+    STATE_FAILEDTOCONNECT
+};
+
+@interface AppDelegate : NSObject <NSApplicationDelegate, SRWebSocketDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 
+- (id) initAppDelegateWithParam:(NSDictionary * )dict;
+
+- (BOOL) isConnecting;
+
+- (void) close;
 @end

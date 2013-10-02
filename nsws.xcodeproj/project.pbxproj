@@ -12,12 +12,21 @@
 		B72DDCCD17FC500E0029768A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCCC17FC500E0029768A /* main.m */; };
 		B72DDCD117FC500E0029768A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B72DDCCF17FC500E0029768A /* Credits.rtf */; };
 		B72DDCD417FC500E0029768A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCD317FC500E0029768A /* AppDelegate.m */; };
-		B72DDCD717FC500E0029768A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72DDCD517FC500E0029768A /* MainMenu.xib */; };
 		B72DDCD917FC500E0029768A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72DDCD817FC500E0029768A /* Images.xcassets */; };
 		B72DDCE017FC500F0029768A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72DDCDF17FC500F0029768A /* XCTest.framework */; };
 		B72DDCE117FC500F0029768A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72DDCC017FC500E0029768A /* Cocoa.framework */; };
 		B72DDCE917FC500F0029768A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B72DDCE717FC500F0029768A /* InfoPlist.strings */; };
 		B72DDCEB17FC500F0029768A /* nswsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCEA17FC500F0029768A /* nswsTests.m */; };
+		B72DDCF617FC50250029768A /* nsws.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCF517FC50250029768A /* nsws.m */; };
+		B72DDCF717FC50250029768A /* nsws.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCF517FC50250029768A /* nsws.m */; };
+		B72DDD0217FC51E60029768A /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCF917FC51E60029768A /* base64.c */; };
+		B72DDD0317FC51E60029768A /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCF917FC51E60029768A /* base64.c */; };
+		B72DDD0417FC51E60029768A /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCFC17FC51E60029768A /* NSData+SRB64Additions.m */; };
+		B72DDD0517FC51E60029768A /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCFC17FC51E60029768A /* NSData+SRB64Additions.m */; };
+		B72DDD0617FC51E60029768A /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCFF17FC51E60029768A /* SRWebSocket.m */; };
+		B72DDD0717FC51E60029768A /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B72DDCFF17FC51E60029768A /* SRWebSocket.m */; };
+		B72DDD0B17FC535C0029768A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72DDD0A17FC535C0029768A /* Security.framework */; };
+		B72DDD0C17FC53700029768A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72DDD0A17FC535C0029768A /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +52,22 @@
 		B72DDCD017FC500E0029768A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		B72DDCD217FC500E0029768A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B72DDCD317FC500E0029768A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B72DDCD617FC500E0029768A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B72DDCD817FC500E0029768A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B72DDCDE17FC500F0029768A /* nswsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nswsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72DDCDF17FC500F0029768A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B72DDCE617FC500F0029768A /* nswsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nswsTests-Info.plist"; sourceTree = "<group>"; };
 		B72DDCE817FC500F0029768A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B72DDCEA17FC500F0029768A /* nswsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nswsTests.m; sourceTree = "<group>"; };
+		B72DDCF417FC50250029768A /* nsws.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nsws.h; sourceTree = "<group>"; };
+		B72DDCF517FC50250029768A /* nsws.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nsws.m; sourceTree = "<group>"; };
+		B72DDCF917FC51E60029768A /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		B72DDCFA17FC51E60029768A /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		B72DDCFB17FC51E60029768A /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		B72DDCFC17FC51E60029768A /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		B72DDCFD17FC51E60029768A /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		B72DDCFE17FC51E60029768A /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		B72DDCFF17FC51E60029768A /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		B72DDD0A17FC535C0029768A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72DDD0B17FC535C0029768A /* Security.framework in Frameworks */,
 				B72DDCC117FC500E0029768A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72DDD0C17FC53700029768A /* Security.framework in Frameworks */,
 				B72DDCE117FC500F0029768A /* Cocoa.framework in Frameworks */,
 				B72DDCE017FC500F0029768A /* XCTest.framework in Frameworks */,
 			);
@@ -76,6 +96,7 @@
 		B72DDCB417FC500E0029768A = {
 			isa = PBXGroup;
 			children = (
+				B72DDCF817FC51E60029768A /* SocketRocket */,
 				B72DDCC617FC500E0029768A /* nsws */,
 				B72DDCE417FC500F0029768A /* nswsTests */,
 				B72DDCBF17FC500E0029768A /* Frameworks */,
@@ -95,6 +116,7 @@
 		B72DDCBF17FC500E0029768A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B72DDD0A17FC535C0029768A /* Security.framework */,
 				B72DDCC017FC500E0029768A /* Cocoa.framework */,
 				B72DDCDF17FC500F0029768A /* XCTest.framework */,
 				B72DDCC217FC500E0029768A /* Other Frameworks */,
@@ -117,7 +139,6 @@
 			children = (
 				B72DDCD217FC500E0029768A /* AppDelegate.h */,
 				B72DDCD317FC500E0029768A /* AppDelegate.m */,
-				B72DDCD517FC500E0029768A /* MainMenu.xib */,
 				B72DDCD817FC500E0029768A /* Images.xcassets */,
 				B72DDCC717FC500E0029768A /* Supporting Files */,
 			);
@@ -132,6 +153,8 @@
 				B72DDCCC17FC500E0029768A /* main.m */,
 				B72DDCCE17FC500E0029768A /* nsws-Prefix.pch */,
 				B72DDCCF17FC500E0029768A /* Credits.rtf */,
+				B72DDCF417FC50250029768A /* nsws.h */,
+				B72DDCF517FC50250029768A /* nsws.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +175,20 @@
 				B72DDCE717FC500F0029768A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B72DDCF817FC51E60029768A /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				B72DDCF917FC51E60029768A /* base64.c */,
+				B72DDCFA17FC51E60029768A /* base64.h */,
+				B72DDCFB17FC51E60029768A /* NSData+SRB64Additions.h */,
+				B72DDCFC17FC51E60029768A /* NSData+SRB64Additions.m */,
+				B72DDCFD17FC51E60029768A /* SocketRocket-Prefix.pch */,
+				B72DDCFE17FC51E60029768A /* SRWebSocket.h */,
+				B72DDCFF17FC51E60029768A /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +270,6 @@
 				B72DDCCB17FC500E0029768A /* InfoPlist.strings in Resources */,
 				B72DDCD917FC500E0029768A /* Images.xcassets in Resources */,
 				B72DDCD117FC500E0029768A /* Credits.rtf in Resources */,
-				B72DDCD717FC500E0029768A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72DDD0617FC51E60029768A /* SRWebSocket.m in Sources */,
+				B72DDD0417FC51E60029768A /* NSData+SRB64Additions.m in Sources */,
 				B72DDCD417FC500E0029768A /* AppDelegate.m in Sources */,
 				B72DDCCD17FC500E0029768A /* main.m in Sources */,
+				B72DDD0217FC51E60029768A /* base64.c in Sources */,
+				B72DDCF617FC50250029768A /* nsws.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72DDD0517FC51E60029768A /* NSData+SRB64Additions.m in Sources */,
+				B72DDCF717FC50250029768A /* nsws.m in Sources */,
+				B72DDD0717FC51E60029768A /* SRWebSocket.m in Sources */,
+				B72DDD0317FC51E60029768A /* base64.c in Sources */,
 				B72DDCEB17FC500F0029768A /* nswsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,14 +334,6 @@
 				B72DDCD017FC500E0029768A /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		B72DDCD517FC500E0029768A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B72DDCD617FC500E0029768A /* Base */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		B72DDCE717FC500F0029768A /* InfoPlist.strings */ = {
