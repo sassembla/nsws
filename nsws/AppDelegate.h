@@ -10,6 +10,7 @@
 #import "SRWebSocket.h"
 
 #define KEY_TARGET  (@"-t")
+#define KEY_MESSAGE (@"-m")
 
 enum STATE {
     STATE_NONE,
@@ -26,6 +27,7 @@ enum STATE {
 - (id) initAppDelegateWithParam:(NSDictionary * )dict;
 
 - (BOOL) isConnecting;
+- (long) messageCount;
 
 - (void) close;
 @end

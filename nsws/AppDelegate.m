@@ -12,7 +12,12 @@
 
 @implementation AppDelegate {
     SRWebSocket * m_client;
+    
     int m_state;
+    
+    NSDictionary * paramDict;
+    
+    long messageCount;
 }
 
 /**
@@ -20,15 +25,16 @@
  */
 - (id) initAppDelegateWithParam:(NSDictionary * )dict {
 
+    paramDict = [[NSDictionary alloc]initWithDictionary:dict];
     // abort when test-run
-    if (dict[KEY_XCTEST]) {
+    if (paramDict[KEY_XCTEST]) {
         return nil;
     }
     
     if (self = [super init]) {
-        NSAssert1(dict[KEY_TARGET], @"%@ rewuired", KEY_TARGET);
+        NSAssert1(paramDict[KEY_TARGET], @"%@ rewuired", KEY_TARGET);
         
-        m_client = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:dict[KEY_TARGET]]];
+        m_client = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:paramDict[KEY_TARGET]]];
         [m_client setDelegate:self];
         [m_client open];
         
@@ -38,30 +44,42 @@
 }
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    NSLog(@"");
-}
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {}
 
 
 /**
  SocketRocket delegates
  */
-- (void)webSocket:(SRWebSocket * )webSocket didReceiveMessage:(id)message {}
+- (void) webSocket:(SRWebSocket * )webSocket didReceiveMessage:(id)message {}
 
 
-- (void)webSocketDidOpen:(SRWebSocket * )webSocket {
+- (void) webSocketDidOpen:(SRWebSocket * )webSocket {
     m_state = STATE_CONNECTED;
+    
+    if (paramDict[KEY_MESSAGE]) {
+        messageCount++;
+        [m_client send:paramDict[KEY_MESSAGE]];
+    } else {
+        
+        FILE * input = stdin;
+        
+        char buffer[BUFSIZ];
+        while(fgets(buffer, BUFSIZ, input)) {
+            NSString * message = [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
+            messageCount++;
+            [m_client send:message];
+        }
+    }
 }
 
-- (void)webSocket:(SRWebSocket * )webSocket didFailWithError:(NSError * )error {
+- (void) webSocket:(SRWebSocket * )webSocket didFailWithError:(NSError * )error {
     m_state = STATE_FAILEDTOCONNECT;
     NSLog(@"nsws: error %@", error);
 }
 
 
 
-- (void)webSocket:(SRWebSocket * )webSocket didCloseWithCode:(NSInteger)code reason:(NSString * )reason wasClean:(BOOL)wasClean {}
+- (void) webSocket:(SRWebSocket * )webSocket didCloseWithCode:(NSInteger)code reason:(NSString * )reason wasClean:(BOOL)wasClean {}
 
 
 - (BOOL) isConnecting {
@@ -69,6 +87,9 @@
     return false;
 }
 
+- (long) messageCount {
+    return messageCount;
+}
 
 
 - (void) close {

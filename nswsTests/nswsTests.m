@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 #define TEST_TAREGET    (@"ws://127.0.0.1:8823")
+#define TEST_MESSAGE    (@"message")
 
 @interface nswsTests : XCTestCase {
     AppDelegate * del;
@@ -32,9 +33,12 @@
     [super tearDown];
 }
 
-
+/**
+ connect then disconnect
+ */
 - (void) testIgniteThenConnectManually {
-    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET};
+    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
+                              KEY_MESSAGE:TEST_MESSAGE};
     del = [[AppDelegate alloc]initAppDelegateWithParam:params];
     
     while ([del isConnecting]) {
@@ -42,6 +46,57 @@
     }
     
 }
+
+/**
+ send message
+ */
+- (void) testConnectThenSendMessage {
+    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
+                              KEY_MESSAGE:TEST_MESSAGE
+                              };
+    del = [[AppDelegate alloc]initAppDelegateWithParam:params];
+    
+    while ([del isConnecting]) {
+        [[NSRunLoop mainRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    }
+    
+    // del messageCount updated
+    XCTAssert([del messageCount] == 1, @"not match, %ld", [del messageCount]);
+}
+
+/**
+ Header and footer
+ */
+- (void) testConnectThenSendMessageWithHeaderAndFooter {
+    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
+                              KEY_MESSAGE:TEST_MESSAGE};
+    del = [[AppDelegate alloc]initAppDelegateWithParam:params];
+    
+    while ([del isConnecting]) {
+        [[NSRunLoop mainRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    }
+    
+    // header***footerフォーマットの実装
+    XCTFail(@"not yet implemented. YAGNI...");
+}
+
+
+/**
+ with Filter
+ */
+- (void) testConnectThenSendMessageWithFilter {
+    NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
+                              KEY_MESSAGE:TEST_MESSAGE};
+    del = [[AppDelegate alloc]initAppDelegateWithParam:params];
+    
+    while ([del isConnecting]) {
+        [[NSRunLoop mainRunLoop]runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    }
+    
+    // プログラマブルなフィルタを書きたいなーprefix一致とかsuffix一致とか
+    XCTFail(@"not yet implemented. YAGNI...");
+}
+
 
 
 @end
