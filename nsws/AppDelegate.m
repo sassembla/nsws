@@ -59,16 +59,19 @@
     if (paramDict[KEY_MESSAGE]) {
         messageCount++;
         [m_client send:paramDict[KEY_MESSAGE]];
-    } else {
         
-        FILE * input = stdin;
-        
-        char buffer[BUFSIZ];
-        while(fgets(buffer, BUFSIZ, input)) {
-            NSString * message = [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
-            messageCount++;
-            [m_client send:message];
-        }
+        if (paramDict[KEY_QUIT]) return;
+    }
+    
+    // then start listen standardInput
+    
+    FILE * input = stdin;
+    
+    char buffer[BUFSIZ];
+    while(fgets(buffer, BUFSIZ, input)) {
+        NSString * message = [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
+        messageCount++;
+        [m_client send:message];
     }
 }
 

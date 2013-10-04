@@ -11,6 +11,7 @@
 
 #define KEY_TARGET  (@"-t")
 #define KEY_MESSAGE (@"-m")
+#define KEY_QUIT    (@"--q")
 
 enum STATE {
     STATE_NONE,

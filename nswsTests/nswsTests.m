@@ -38,7 +38,9 @@
  */
 - (void) testIgniteThenConnectManually {
     NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
-                              KEY_MESSAGE:TEST_MESSAGE};
+                              KEY_MESSAGE:TEST_MESSAGE,
+                              KEY_QUIT:@""
+                              };
     del = [[AppDelegate alloc]initAppDelegateWithParam:params];
     
     while ([del isConnecting]) {
@@ -52,7 +54,8 @@
  */
 - (void) testConnectThenSendMessage {
     NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
-                              KEY_MESSAGE:TEST_MESSAGE
+                              KEY_MESSAGE:TEST_MESSAGE,
+                              KEY_QUIT:@""
                               };
     del = [[AppDelegate alloc]initAppDelegateWithParam:params];
     
@@ -69,7 +72,9 @@
  */
 - (void) testConnectThenSendMessageWithHeaderAndFooter {
     NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
-                              KEY_MESSAGE:TEST_MESSAGE};
+                              KEY_MESSAGE:TEST_MESSAGE,
+                              KEY_QUIT:@""
+                              };
     del = [[AppDelegate alloc]initAppDelegateWithParam:params];
     
     while ([del isConnecting]) {
@@ -86,7 +91,9 @@
  */
 - (void) testConnectThenSendMessageWithFilter {
     NSDictionary * params = @{KEY_TARGET:TEST_TAREGET,
-                              KEY_MESSAGE:TEST_MESSAGE};
+                              KEY_MESSAGE:TEST_MESSAGE,
+                              KEY_QUIT:@""
+                              };
     del = [[AppDelegate alloc]initAppDelegateWithParam:params];
     
     while ([del isConnecting]) {
