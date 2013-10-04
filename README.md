@@ -2,6 +2,7 @@ nsws
 ====
 
 command line WebSocket Client for Mac.
+ver 0.9.0
 
 ##Usage
 ###Send message via standard-input
